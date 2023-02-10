@@ -32,6 +32,10 @@ mongoose
 
       const allRecipes = await Recipe.insertMany(data)
 
+      allRecipes.forEach(recipe => {
+        console.log(recipe.title)
+      })
+      
       const updateRecipe = await Recipe.findOneAndUpdate({
         title: "Rigatoni alla Genovese"}, 
         {duration: 100}, 
